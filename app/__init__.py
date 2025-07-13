@@ -32,6 +32,12 @@ load_dotenv()
 
 app = Flask(__name__,)
 
+CORS(app, supports_credentials=True, origins=[
+    "http://localhost:5173",
+    "https://jobhatch-0712.onrender.com"
+], methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"], allow_headers=["Content-Type", "Authorization"])
+
+
 # Setup login manager
 login = LoginManager(app)
 login.login_view = 'auth.unauthorized'
@@ -71,7 +77,7 @@ Migrate(app, db)
 
 # Application Security
 # CORS(app)
-CORS(app, supports_credentials=True, origins=["http://localhost:5173", "https://jobhatch-0712.onrender.com/"])
+# CORS(app, supports_credentials=True, origins=["http://localhost:5173", "https://jobhatch-0712.onrender.com/"])
 
 
 
