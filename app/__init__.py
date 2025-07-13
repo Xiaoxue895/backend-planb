@@ -71,7 +71,7 @@ Migrate(app, db)
 
 # Application Security
 # CORS(app)
-CORS(app, supports_credentials=True, origins=["http://localhost:5173", "https://myapp.example.com"])
+CORS(app, supports_credentials=True, origins=["http://localhost:5173", "https://jobhatch-0712.onrender.com/"])
 
 
 
