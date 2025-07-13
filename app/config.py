@@ -12,3 +12,6 @@ class Config:
     SQLALCHEMY_DATABASE_URI = os.environ.get(
         'DATABASE_URL').replace('postgres://', 'postgresql://')
     SQLALCHEMY_ECHO = True
+
+    SESSION_COOKIE_SAMESITE = 'None'  # 允许跨站点发送 cookie
+    SESSION_COOKIE_SECURE = True if os.environ.get('FLASK_ENV') == 'production' else False
